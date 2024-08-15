@@ -15,9 +15,12 @@
 
 .nav-logo {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 50px;
     font-weight: bold;
     text-decoration: none;
+}
+.nav-logo:hover{
+    color:seagreen;
 }
 
 .nav-ul {
@@ -41,7 +44,7 @@
 }
 
 .nav-item a:hover {
-    background-color:crimson;
+    background-color:seagreen;
     border-radius: 5px;
 }
 
@@ -53,11 +56,12 @@
 @media (max-width: 768px) {
     .nav-ul {
         flex-direction: column;
+        text-align: center;
         width: 100%;
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: #333;
+        background-color: rgb(10, 63, 66);
         display: none;
     }
 
@@ -70,7 +74,6 @@
         margin-top: 0.5rem;
         width: 100%;
     }
-
     .nav-item a {
         width: 100%;
         text-align: center;

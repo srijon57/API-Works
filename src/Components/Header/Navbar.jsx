@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import menuIcon from '@iconify/icons-line-md/menu';
 import menuToCloseTransitionIcon from '@iconify/icons-line-md/menu-to-close-transition';
+import apiOutlinedIcon from '@iconify-icons/eos-icons/api-outlined';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,7 +20,9 @@ const Navbar = () => {
 
     return (
         <nav className="nav">
-            <Link to="/" className="nav-logo">LOGO</Link>
+            <Link to="/" className="nav-logo">
+                <Icon icon={apiOutlinedIcon}  />
+            </Link>
             <div className="menu-icon" onClick={toggleMenu}>
                 <Icon icon={isOpen ? menuToCloseTransitionIcon : menuIcon} style={{ color: '#fff', fontSize: '2rem' }} />
             </div>
