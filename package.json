@@ -1,0 +1,37 @@
+{
+  "name": "weather-and-ai-chat",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@iconify/icons-line-md": "^1.2.30",
+    "@iconify/react": "^5.0.2",
+    "axios": "^1.7.4",
+    "country-list": "^2.3.0",
+    "date-fns": "^3.6.0",
+    "install": "^0.13.0",
+    "npm": "^10.8.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "unplugin-icons": "^0.19.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "vite": "^5.4.0"
+  }
+}

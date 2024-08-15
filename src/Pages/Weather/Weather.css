@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.weather-container {
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    border: none;
+    border-bottom: 1px solid #cbd5e0;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-button {
+    background-color: #cbd5e0;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #94a3b8;
+}
+
+.search-button:disabled {
+    background-color: #64748b;
+    cursor: not-allowed;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    border: 8px solid #3b82f6;
+    border-top: 8px solid #a5b4fc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.error-icon {
+    font-size: 128px;
+    color: #ef4444;
+    margin-bottom: 20px;
+}
+
+.error-text {
+    color: #ef4444;
+    font-size: 16px;
+}
+
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    color: #cbd5e0;
+}
+
+.city-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.country-name {
+    font-weight: normal;
+}
+
+.date {
+    font-size: 18px;
+    font-weight: lighter;
+    margin-top: -10px;
+}
+
+.weather-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.weather-icon {
+    font-size: 100px;
+    margin-bottom: 20px;
+}
+
+.temperature-container {
+    text-align: center;
+}
+
+.temperature {
+    font-size: 48px;
+    font-weight: semibold;
+}
+
+.degree {
+    font-size: 32px;
+}
+
+.weather-description {
+    font-size: 16px;
+    font-weight: lighter;
+}
