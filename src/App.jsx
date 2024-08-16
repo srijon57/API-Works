@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home'
 import Weather from './Pages/Weather/Weather'
 import ContextProvider from './Context/WeatherContext'
 import AIChat from './Pages/AIChat/AIChat'
+import Sports from './Pages/Sports/Sports'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/" element={<Home />} />      
                 <Route path="/weather" element={<Weather />} />
                 <Route path="/aichat" element={<AIChat />} />
+                <Route path="/sports" element={<Sports />} />
     </Routes>
     </ContextProvider>
     </>

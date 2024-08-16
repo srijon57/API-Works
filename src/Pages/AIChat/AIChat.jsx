@@ -34,7 +34,7 @@ const AIChat = () => {
             }
 
             setGeneratingAnswer(false);
-            setInput(""); // Clear the input field
+            setInput(""); 
         }
     };
 
