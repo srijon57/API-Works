@@ -6,7 +6,7 @@ This project aims to create various web pages using APIs from different provider
 
 - **Weather API**: Fetches weather data from [OpenWeatherMap](https://api.openweathermap.org/).
 - **Chat API**: Utilizes the Gemini API for chat functionalities. [Gemini](https://ai.google.dev/)
-- **Sports Update API**: Provides sports updates (API details to be added).
+- **Sports Update API**: Provides sports updates [LiveScore](https://rapidapi.com/apidojo/api/livescore6)
 
 ## Live Demo
 
@@ -25,6 +25,7 @@ Create a `.env` file in the root of your project directory to store your API key
 ```env
 VITE_WEATHER_API_KEY="your_weather_api_key"
 VITE_GEMINI_API_KEY="your_gemini_api_key"
+VITE_RAPIDAPI_API_KEY="your_livescore_api_key"
 ```
 ### Installation
 
@@ -54,7 +55,7 @@ VITE_GEMINI_API_KEY="your_gemini_api_key"
     npm run dev
     ```
 
-2. Open your browser and navigate to `http://localhost:3000` to see the application in action.
+2. Open your browser and navigate to `http://localhost:5173` to see the application in action.
 
 ## Contributing
 
