@@ -3,3 +3,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    /* background-color: #f0f0f0;  */
+}
+
+.home-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color:darkseagreen;
+}
+
+.home-container h2 {
+    font-size: 48px;
+    color: aquamarine;
+}
+
+.typing-effect-cursor {
+    font-size: 48px;
+    display: inline-block;
+    width: 4px; 
+    height: 1em; 
+    background-color: aquamarine;
+    margin-left: 2px; 
+}

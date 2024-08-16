@@ -14,32 +14,24 @@ const Sports = () => {
                 url: "https://livescore6.p.rapidapi.com/matches/v2/list-live",
                 params: {
                     Category: "soccer",
-                    Timezone: "-7", // Adjust timezone if needed
+                    Timezone: "-7",
                 },
                 headers: {
-                    "x-rapidapi-key":
-                        "0501fab9bfmsh7acdc46d6417c28p13c4d7jsnb36c201aca69",
+                    "x-rapidapi-key": import.meta.env.VITE_RAPIDAPI_API_KEY,
                     "x-rapidapi-host": "livescore6.p.rapidapi.com",
                 },
             };
 
             try {
                 const response = await axios.request(options);
-                console.log("API Response:", response.data);
+                // console.log("API Response:", response.data);
 
                 // Adjust according to the actual data structure
                 const stages = response.data.Stages || [];
-                if (Array.isArray(stages)) {
-                    // Extract matches from stages if applicable
-                    const allMatches = stages.flatMap(
-                        (stage) => stage.matches || []
-                    );
-                    setMatches(allMatches);
-                } else {
-                    setError("Unexpected data format received from the API");
-                }
+                const allMatches = stages.flatMap(stage => stage.Events || []);
+                setMatches(allMatches);
             } catch (error) {
-                console.error("Error fetching data:", error);
+                // console.error("Error fetching data:", error);
                 setError("An error occurred while fetching the matches");
             } finally {
                 setLoading(false);
@@ -49,7 +41,7 @@ const Sports = () => {
         fetchMatches();
     }, []);
 
-    if (loading) return <div className="loader">Loading...</div>;
+    if (loading) return <div className="spinner"></div>;
     if (error) return <div className="error-message">{error}</div>;
 
     return (
@@ -57,13 +49,34 @@ const Sports = () => {
             <h1>Live Soccer Matches</h1>
             {matches.length > 0 ? (
                 <ul className="matches-list">
-                    {matches.map((match, index) => (
+                    {matches.map((event, index) => (
                         <li key={index} className="match-item">
-                            <h2>
-                                {match.homeTeam} vs {match.awayTeam}
-                            </h2>
-                            <p>Score: {match.score}</p>
-                            <p>Time: {match.time}</p>
+                            <div className="match-details">
+                                <div className="team-info">
+                                    <img
+                                        src={`https://lsm-static-prod.livescore.com/medium/${event.T1[0]?.Img}`}
+                                        width="40"
+                                        className="team-logo"
+                                        alt={event.T1[0]?.Nm || "Unknown Team"}
+                                    />
+                                    <p className="team-name">{event.T1[0]?.Nm || "Unknown Team"}</p>
+                                </div>
+                                <div className="score-info">
+                                    <h2>
+                                        {event.Tr1} - {event.Tr2}
+                                    </h2>
+                                    <p>{event.Eps}</p>
+                                </div>
+                                <div className="team-info">
+                                    <img
+                                        src={`https://lsm-static-prod.livescore.com/medium/${event.T2[0]?.Img}`}
+                                        width="40"
+                                        className="team-logo"
+                                        alt={event.T2[0]?.Nm || "Unknown Team"}
+                                    />
+                                    <p className="team-name">{event.T2[0]?.Nm || "Unknown Team"}</p>
+                                </div>
+                            </div>
                         </li>
                     ))}
                 </ul>

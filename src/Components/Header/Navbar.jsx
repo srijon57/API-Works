@@ -12,6 +12,7 @@ const Navbar = () => {
     const navItems = [
         { name: "Weather", href: "/weather" },
         { name: "AI chat", href: "/aichat" },
+        { name: "Soccer Live", href: "/sports" },
     ];
 
     const toggleMenu = () => {
