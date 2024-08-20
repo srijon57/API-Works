@@ -8,6 +8,7 @@ import ContextProvider from './Context/WeatherContext'
 import AIChat from './Pages/AIChat/AIChat'
 import Sports from './Pages/Sports/Sports'
 import SoccerGame from './Pages/OnOne/Soccergame'
+import Dictionary from './Pages/Dictionary/Dictionary'
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/aichat" element={<AIChat />} />
                 <Route path="/sports" element={<Sports />} />
                 <Route path="/soccergame" element={<SoccerGame />} />
+                <Route path="/dictionary" element={<Dictionary />} />
     </Routes>
     </ContextProvider>
     </>

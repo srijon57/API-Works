@@ -7,6 +7,7 @@ This project aims to create various web pages using APIs from different provider
 - **Weather API**: Fetches weather data from [OpenWeatherMap](https://api.openweathermap.org/).
 - **Chat API**: Utilizes the Gemini API for chat functionalities. [Gemini](https://ai.google.dev/)
 - **Sports Update API**: Provides sports updates [LiveScore](https://rapidapi.com/apidojo/api/livescore6)
+- **Dictionary API**: Provides English to English dictionary [Dictionary](https://dictionaryapi.dev/)
 
 ## Live Demo
 

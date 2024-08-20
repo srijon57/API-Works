@@ -14,6 +14,7 @@ const Navbar = () => {
         { name: "AI chat", href: "/aichat" },
         { name: "Soccer Live", href: "/sports" },
         { name: "Soccer Game", href: "/soccergame" },
+        { name: "Dictionary", href: "/dictionary" },
     ];
 
     const toggleMenu = () => {
