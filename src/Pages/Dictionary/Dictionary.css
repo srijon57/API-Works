@@ -5,11 +5,74 @@
     align-items: center;
 }
 
-.dictionary h1 {
-    text-align: center;
-    color:aquamarine;
-    margin-bottom: 20px;
+.Dict {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 100px;
 }
+
+.Dict > span {
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: aquamarine;
+        text-shadow: 0 0 10px #0652DD, 0 0 50px #0652DD, 0 0 100px #0652DD;
+    }
+
+    10%, 90% {
+        color:rgba(127, 255, 212, 0.253);
+        text-shadow: none;
+    }
+}
+
+.Dict > span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.Dict > span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.Dict > span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.Dict > span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+
+.Dict > span:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.Dict > span:nth-child(6) {
+    animation-delay: 1.25s;
+}
+
+.Dict > span:nth-child(7) {
+    animation-delay: 1.5s;
+}
+
+.Dict > span:nth-child(8) {
+    animation-delay: 1.75s;
+}
+
+.Dict > span:nth-child(9) {
+    animation-delay: 2s;
+}
+
+.Dict > span:nth-child(10) {
+    animation-delay: 2.25s;
+}
+
+.Dict > span:nth-child(11) {
+    animation-delay: 2.5s;
+}
+
 
 .dictionary-container {
     max-width: 80%;
@@ -38,19 +101,52 @@
 }
 
 .dictionary-button {
-    padding: 10px 20px;
+    padding: 0px 20px;
     font-size: 16px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background: linear-gradient(0deg, rgb(0, 115, 255) 0%, rgb(2, 56, 251) 100%);
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
+    line-height: 40px;
+    position: relative;
+    overflow: hidden;
 }
 
 .dictionary-button:hover {
-    background-color: #0056b3;
+    background-color: #55789d;
+    text-decoration: none;
+    color: #fff;
+    opacity: .7;
 }
+
+.dictionary-button:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+
+.dictionary-button:active {
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+                inset -4px -4px 6px 0 rgba(255,255,255,.2),
+                inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+@keyframes shiny-btn1 {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}
+
 
 .dictionary-error {
     color: red;
@@ -104,7 +200,9 @@
     .dictionary-container {
         padding: 15px;
     }
-
+    .Dict {
+        font-size: 50px;
+    }
     .dictionary-form {
         flex-direction: column;
         align-items: center;

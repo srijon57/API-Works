@@ -33,20 +33,42 @@
 
 .nav-item {
     margin-left: 1rem;
+    position: relative; 
 }
 
 .nav-item a {
-    color: #fff;
+    color: #8ce436;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 16px;
     padding: 0.5rem 1rem;
+    border: 1px solid #8ce436;
+    box-shadow: 0 0 5px #8ce436, 0 0 5px inset;
     transition: background-color 0.3s ease;
+    position: relative; 
 }
 
 .nav-item a:hover {
-    background-color:seagreen;
+    background-color: seagreen;
     border-radius: 5px;
 }
+
+.nav-item a:after {
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 6px;
+    width: 90%;
+    height: 70%;
+    border: 1px solid seagreen;
+    box-shadow: 0 0 5px #8ce436 inset;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-item a:hover:after {
+    opacity: 1;
+}
+
 
 .menu-icon {
     display: none;
@@ -55,14 +77,17 @@
 
 @media (max-width: 768px) {
     .nav-ul {
+        padding-bottom: 20%;
         flex-direction: column;
         text-align: center;
         width: 100%;
+        height: auto;
         position: absolute;
         top: 100%;
         right: 0;
         background-color: rgb(10, 63, 66);
         display: none;
+        z-index: 999;
     }
 
     .nav-ul.open {
@@ -71,12 +96,29 @@
 
     .nav-item {
         margin-left: 0;
-        margin-top: 0.5rem;
+        margin-top: 3rem;
         width: 100%;
     }
+
     .nav-item a {
         width: 100%;
         text-align: center;
+        font-size: 12px; 
+        padding: 0.75rem 3rem; 
+        border:.5px solid seagreen;
+        box-shadow: none;
+    }
+    .nav-item a:after {
+        position: absolute;
+        content: "";
+        top: 5px;
+        left: 6px;
+        width: 90%;
+        height: 70%;
+        border: 1px solid seagreen;
+        box-shadow: 0 0 5px #8ce436 inset;
+        opacity: 0;
+        transition: all 0.3s ease;
     }
 
     .menu-icon {

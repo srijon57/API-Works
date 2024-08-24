@@ -12,10 +12,50 @@
 }
 
 .matches-container h1 {
-  color:aquamarine;
+  color: aquamarine;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
 }
+
+.matches-container h1::before {
+  content: "✨";
+  margin-right: 10px;
+  animation: sparkle 2s infinite;
+}
+
+.matches-container h1::after {
+  content: "✨";
+  margin-left: 10px;
+  animation: sparkle 2s infinite;
+}
+
+.matches-container h1:hover {
+  color: darkcyan;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 
 .error-message {
   background-color: red;

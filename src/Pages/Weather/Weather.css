@@ -28,20 +28,48 @@
 }
 
 .search-button {
-    background-color:darkgreen;
-    color: #fff;
-    border-radius: 30%;
+    position: relative;
+    background: linear-gradient(277deg, rgba(213, 213, 213, 0.1) 0%, rgba(213, 213, 213, 0.02) 50%, rgba(42, 42, 42, 0.02) 50%, rgba(42, 42, 42, 0.2) 100%),
+                linear-gradient(295deg, rgba(73, 73, 73, 0.3) 0%, rgba(73, 73, 73, 0.1) 50%, rgba(229, 229, 229, 0.1) 50%, rgba(229, 229, 229, 0.03) 100%),
+                linear-gradient(145deg, rgba(77, 77, 77, 0.1) 0%, rgba(77, 77, 77, 0.1) 50%, rgba(123, 123, 123, 0.1) 50%, rgba(123, 123, 123, 0.1) 100%),
+                linear-gradient(54deg, rgba(51, 51, 51, 0.3) 0%, rgba(51, 51, 51, 0.1) 50%, rgba(29, 29, 29, 0.2) 50%, rgba(29, 29, 29, 0.03) 100%),
+                linear-gradient(170deg, rgba(9, 9, 9, 0.02) 0%, rgba(9, 9, 9, 0.02) 50%, rgba(243, 243, 243, 0.02) 50%, rgba(243, 243, 243, 0.02) 100%),
+                linear-gradient(264deg, rgba(214, 214, 214, 0.01) 0%, rgba(214, 214, 214, 0.01) 50%, rgba(153, 153, 153, 0.01) 50%, rgba(153, 153, 153, 0.01) 100%),
+                linear-gradient(90deg, rgb(99, 48, 222), rgb(76, 212, 233));
     padding: 10px 15px;
+    border: 1px solid black;
+    border-radius: 25px 7px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: all 0.7s ease;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+}
+
+.search-button:after {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    background: linear-gradient(45deg, rgb(46, 94, 149), rgb(59, 131, 209), rgb(67, 91, 142));
+    width: 150px;
+    height: 30px;
+    content: '';
+    transform: translate(-50%);
+    border-radius: 25px 7px;
+    filter: blur(20px);
+    z-index: -1;
 }
 
 .search-button:hover {
-    background-color:darkolivegreen;
+    border-radius: 7px 25px;
+    background: linear-gradient(45deg, rgb(239, 7, 129) 0%, rgb(239, 7, 129) 6%, rgb(208, 10, 112) 6%, rgb(208, 10, 112) 25%, rgb(177, 13, 96) 25%, rgb(177, 13, 96) 40%, rgb(147, 16, 79) 40%, rgb(147, 16, 79) 45%, rgb(116, 19, 62) 45%, rgb(116, 19, 62) 53%, rgb(85, 22, 46) 53%, rgb(85, 22, 46) 66%, rgb(54, 25, 29) 66%, rgb(54, 25, 29) 100%);
+    letter-spacing: .2em;
+    border: 1px solid white;
 }
 
+
 .search-button:disabled {
-    background-color: #64748b;
+    background:grey;
     cursor: not-allowed;
 }
 
