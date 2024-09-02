@@ -1,10 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     align-items: center;
 }
-
 
 .chat-container {
     width: 100%;
@@ -22,94 +21,6 @@
     padding: 20px;
     overflow-y: auto;
 }
-
-.message {
-    
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 70%;
-    word-wrap: break-word;
-}
-
-.message.user {
-    background-color:darkseagreen;
-    color: black;
-    align-self: flex-end;
-    margin-left: 40%;
-}
-
-.message.bot {
-    background-color:cadetblue;
-    color: black;
-    align-self: flex-start;
-}
-
-.input-area {
-    width: 100%;
-    display: flex;
-    padding: 10px;
-    
-}
-
-.input-area input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-    font-size: 16px;
-    background-color:powderblue;
-}
-
-.input-area button {
-    margin-left: 0.5em;
-    height: 2.5em;
-    padding: 0.5em 1em 0.5em 2.5em; 
-    font-size: 16px; 
-    font-weight: bold;
-    font-family: "Open Sans";
-    text-transform: uppercase;
-    color: #696666;
-    background: url(https://i.imgur.com/Th606mh.png) no-repeat scroll 0.65em -.5em transparent; 
-    background-size: 27px 102px; 
-    border-radius: 2em;
-    border: 0.15em solid seagreen;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-.input-area button:hover {
-    color: #fff;
-    background-color: seagreen;
-    border-color: seagreen;
-    background-position: 0.75em bottom; 
-    -webkit-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-.input-area button:focus {
-    background-position: 2em -2em; 
-    -webkit-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
-}
-
-
-
-.input-area button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
-
 .chat-box::-webkit-scrollbar {
     width: 8px;
 }
@@ -124,4 +35,99 @@
 
 .chat-box::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: darkseagreen;
+    color: black;
+    align-self: flex-end;
+    margin-left: 40%;
+}
+
+.message.bot {
+    background-color: cadetblue;
+    color: black;
+    align-self: flex-start;
+}
+
+.input-area {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    background-color: powderblue;
+}
+
+.input-area button {
+    font-family: inherit;
+    font-size: 100%;
+    background: seagreen;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.input-area button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-area button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.input-area button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.input-area button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.input-area button:hover span {
+    transform: translateX(5em);
+}
+
+.input-area button:active {
+    transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+    from {
+        transform: translateY(0.1em);
+    }
+
+    to {
+        transform: translateY(-0.1em);
+    }
+}
+
+.input-area button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Icon } from "@iconify/react";
 import { WeatherContext } from "../../Context/WeatherContext";
 import "./Weather.css";
+import Spinner from "../../Components/Spinner/Spinner";
 
 const weatherIcons = {
     Clear: "wi-day-sunny",
@@ -38,11 +39,7 @@ const Weather = () => {
     };
 
     if (loading)
-        return (
-            <div className="loading-spinner">
-                <div className="spinner"></div>
-            </div>
-        );
+        return <Spinner />; 
 
     if (error)
         return (
