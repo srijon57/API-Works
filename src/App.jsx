@@ -9,6 +9,7 @@ import AIChat from './Pages/AIChat/AIChat'
 import Sports from './Pages/Sports/Sports'
 import SoccerGame from './Pages/OnOne/Soccergame'
 import Dictionary from './Pages/Dictionary/Dictionary'
+import TypingSpeedTest from './Pages/TypingSpeedTest/TypingSpeedTest'
 function App() {
 
   return (
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/sports" element={<Sports />} />
                 <Route path="/soccergame" element={<SoccerGame />} />
                 <Route path="/dictionary" element={<Dictionary />} />
+                <Route path="/type" element={<TypingSpeedTest />} />
     </Routes>
     </ContextProvider>
     </>

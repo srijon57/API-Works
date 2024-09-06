@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  align-items: center;
+}
+.typing-speed-test {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+}
+
+.typing-speed-test h1 {
+  font-size: 36px;
+  color:aquamarine;
+  margin-bottom: 20px;
+}
+
+/* Styling for the paragraph display area */
+.test-area {
+  width: 100%;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.paragraph {
+  font-size: 200%;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Text area for typing input */
+.type-input-area {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  resize: none;
+  outline: none;
+  background-color: #fdfdfd;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.input-area:focus {
+  border-color: #007bff;
+}
+
+/* Correct and incorrect typing color highlights */
+.correct {
+  background-color: #c8e6c9;
+}
+
+.incorrect {
+  background-color: #ffcdd2;
+}
+
+/* Info box for timer and WPM */
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.timer {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color:darkseagreen;
+}
+
+.wpm {
+  font-size: 24px;
+  font-weight: bold;
+  color:honeydew;
+  margin-bottom: 10px;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color:darkcyan;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #1d716a;
+}
+
+@media (max-width: 768px) {
+  .test-area {
+    width: 95%;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .input-area {
+    height: 120px;
+  }
+}
