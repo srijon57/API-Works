@@ -15,6 +15,7 @@ const Navbar = () => {
         { name: "Soccer Live", href: "/sports" },
         { name: "Soccer Game", href: "/soccergame" },
         { name: "Dictionary", href: "/dictionary" },
+        { name: "Type_Turbo", href: "/type" },
     ];
 
     const toggleMenu = () => {

@@ -5,11 +5,11 @@ const TypingSpeedTest = () => {
     const [paragraph, setParagraph] = useState("");
     const [userInput, setUserInput] = useState("");
     const [timeLeft, setTimeLeft] = useState(60);
-    const [isActive, setIsActive] = useState(false); 
+    const [isActive, setIsActive] = useState(false);
     const [wpm, setWpm] = useState(0);
     const [hasFinished, setHasFinished] = useState(false);
     const inputRef = useRef(null);
-    const [timerStarted, setTimerStarted] = useState(false); 
+    const [timerStarted, setTimerStarted] = useState(false);
 
     useEffect(() => {
         fetchRandomParagraph();
@@ -54,7 +54,7 @@ const TypingSpeedTest = () => {
         setWpm(0);
         setHasFinished(false);
         setIsActive(false);
-        setTimerStarted(false); 
+        setTimerStarted(false);
         inputRef.current.focus();
     };
 
@@ -72,7 +72,9 @@ const TypingSpeedTest = () => {
 
     return (
         <div className="typing-speed-test">
-            <h1>Typing Speed Test</h1>
+            <h1>
+                <span>T</span>yping <span>Turbo</span>
+            </h1>
             <div className="test-area">
                 <div className="paragraph">
                     {paragraph.split("").map((char, index) => (
