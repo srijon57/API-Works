@@ -57,13 +57,13 @@ const Weather = () => {
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     onKeyPress={handleKeypress}
-                    className="search-input"
+                    className="weather-search-input"
                     placeholder="Enter City name ..."
                 />
                 <button
                     onClick={handleSearch}
                     disabled={!city}
-                    className="search-button"
+                    className="weather-search-button"
                 >
                     Search
                 </button>

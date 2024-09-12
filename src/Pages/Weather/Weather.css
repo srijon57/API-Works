@@ -16,7 +16,7 @@
     margin-bottom: 20px;
 }
 
-.search-input {
+.weather-search-input {
     border: none;
     border-bottom: 1px solid white;
     background: transparent;
@@ -27,7 +27,7 @@
     outline: none;
 }
 
-.search-button {
+.weather-search-button{
     position: relative;
     background: linear-gradient(277deg, rgba(213, 213, 213, 0.1) 0%, rgba(213, 213, 213, 0.02) 50%, rgba(42, 42, 42, 0.02) 50%, rgba(42, 42, 42, 0.2) 100%),
                 linear-gradient(295deg, rgba(73, 73, 73, 0.3) 0%, rgba(73, 73, 73, 0.1) 50%, rgba(229, 229, 229, 0.1) 50%, rgba(229, 229, 229, 0.03) 100%),
@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-.search-button:after {
+.weather-search-button:after {
     position: absolute;
     top: 20%;
     left: 50%;
@@ -60,7 +60,7 @@
     z-index: -1;
 }
 
-.search-button:hover {
+.weather-search-button:hover {
     border-radius: 7px 25px;
     background: linear-gradient(45deg, rgb(239, 7, 129) 0%, rgb(239, 7, 129) 6%, rgb(208, 10, 112) 6%, rgb(208, 10, 112) 25%, rgb(177, 13, 96) 25%, rgb(177, 13, 96) 40%, rgb(147, 16, 79) 40%, rgb(147, 16, 79) 45%, rgb(116, 19, 62) 45%, rgb(116, 19, 62) 53%, rgb(85, 22, 46) 53%, rgb(85, 22, 46) 66%, rgb(54, 25, 29) 66%, rgb(54, 25, 29) 100%);
     letter-spacing: .2em;
@@ -68,7 +68,7 @@
 }
 
 
-.search-button:disabled {
+.weather-search-button:disabled {
     background:grey;
     cursor: not-allowed;
 }

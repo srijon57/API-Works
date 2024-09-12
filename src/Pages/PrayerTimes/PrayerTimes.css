@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.prayer-times-app {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.locale-clock {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.locale-clock-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.locale-clock-time {
+    font-size: 24px;
+    display: block;
+    margin-top: 5px;
+}
+
+.locale-clock-date {
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+}
+
+.locale-clock-hijri-date {
+    font-size: 16px;
+    display: block;
+    margin-top: 5px;
+}
+
+.prayer-times-app .prayer-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: black;
+}
+
+.prayer-times-app .prayer-search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.prayer-times-app .prayer-search-button:hover {
+    background-color: #0056b3;
+}
+
+.prayer-times-app .loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    animation: roll 1s ease-in-out infinite alternate;
+}
+
+.loader:after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: #ff3d00 transparent;
+}
+
+@keyframes roll {
+    0% {
+        transform: translateX(-150%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(150%) rotate(360deg);
+    }
+}
+
+.prayer-times-app .error {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.prayer-times-list {
+    list-style: none;
+    padding: 0;
+}
+
+.prayer-time-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.prayer-time-item:hover {
+    background-color: #e3f2fd;
+}
+
+.prayer-name {
+    font-weight: 600;
+    color: #1e88e5;
+}
+
+.prayer-time {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+@media (max-width: 600px) {
+    .prayer-times-app {
+        margin: 0 10px;
+    }
+
+    .prayer-search-input {
+        width: 90%;
+    }
+}

@@ -10,6 +10,7 @@ import Sports from './Pages/Sports/Sports'
 import SoccerGame from './Pages/OnOne/Soccergame'
 import Dictionary from './Pages/Dictionary/Dictionary'
 import TypingSpeedTest from './Pages/TypingSpeedTest/TypingSpeedTest'
+import PrayerTimes from './Pages/PrayerTimes/PrayerTimes'
 function App() {
 
   return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/soccergame" element={<SoccerGame />} />
                 <Route path="/dictionary" element={<Dictionary />} />
                 <Route path="/type" element={<TypingSpeedTest />} />
+                <Route path="/prayertime" element={<PrayerTimes />} />
     </Routes>
     </ContextProvider>
     </>
