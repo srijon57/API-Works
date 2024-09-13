@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@iconify-icons/eos-icons": "^1.2.6",
+    "@iconify-icons/line-md": "^1.2.30",
     "@iconify/icons-line-md": "^1.2.30",
     "@iconify/react": "^5.0.2",
     "axios": "^1.7.4",

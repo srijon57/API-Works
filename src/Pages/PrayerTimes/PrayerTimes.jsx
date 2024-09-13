@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
+import { Icon } from "@iconify/react";
+import lineMdSearch from "@iconify-icons/line-md/search";
 import "./PrayerTimes.css";
 
 const ALADHAN_API_BASE_URL = "https://api.aladhan.com/v1/timingsByCity";
-const OPENWEATHERMAP_API_BASE_URL ="https://api.openweathermap.org/geo/1.0/direct";
+const OPENWEATHERMAP_API_BASE_URL = "https://api.openweathermap.org/geo/1.0/direct";
 
 const LocaleClock = () => {
     const [currentTime, setCurrentTime] = useState(
@@ -17,7 +19,7 @@ const LocaleClock = () => {
             year: "numeric",
         })
     );
-    
+
     const [hijriDate, setHijriDate] = useState(null);
     useEffect(() => {
         const interval = setInterval(() => {
@@ -69,12 +71,6 @@ const PrayerTimesApp = () => {
     const [prayerTimes, setPrayerTimes] = useState(null);
     const [locationName, setLocationName] = useState(null);
 
-    // useEffect(() => {
-    //     if (locationName) {
-    //         console.log("Location Name:", locationName);
-    //     }
-    // }, [locationName]);
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (inputRef.current.value === "") return;
@@ -83,27 +79,28 @@ const PrayerTimesApp = () => {
     };
 
     const searchForLocation = async (city) => {
+        setIsError(false); // Reset error state before starting a new search
         try {
             const geoResponse = await axios.get(OPENWEATHERMAP_API_BASE_URL, {
                 params: {
                     q: city,
-                    appid: import.meta.env.VITE_WEATHER_API_KEY, 
+                    appid: import.meta.env.VITE_WEATHER_API_KEY,
                 },
             });
-
+    
             if (geoResponse.data.length === 0) {
                 throw new Error("City not found");
             }
-
+    
             const { name: cityName, country } = geoResponse.data[0];
-
+    
             const response = await axios.get(ALADHAN_API_BASE_URL, {
                 params: {
                     city: cityName,
                     country,
                 },
             });
-
+    
             const data = response.data.data;
             const {
                 Fajr,
@@ -125,7 +122,7 @@ const PrayerTimesApp = () => {
                 Midnight,
                 Sunset,
             });
-
+    
             setLocationName({ city: cityName, country });
         } catch (err) {
             console.error(err);
@@ -135,6 +132,7 @@ const PrayerTimesApp = () => {
             setIsLoading(false);
         }
     };
+    
 
     return (
         <div className="prayer-times-app">
@@ -142,16 +140,18 @@ const PrayerTimesApp = () => {
                 <nav>
                     <LocaleClock />
                     <form onSubmit={handleSubmit}>
-                        <input
-                            ref={inputRef}
-                            className="prayer-search-input"
-                            placeholder="Enter city name"
-                            type="text"
-                            name="search"
-                        />
-                        <button type="submit" className="prayer-search-button">
-                            Search
-                        </button>
+                        <div className="prayersearch">
+                            <input
+                                ref={inputRef}
+                                className="prayer-search-input"
+                                placeholder="Enter city name"
+                                type="text"
+                                name="search"
+                            />
+                            <button type="submit" className="prayer-search-button">
+                                <Icon icon={lineMdSearch} />
+                            </button>
+                        </div>
                     </form>
                 </nav>
             </header>
