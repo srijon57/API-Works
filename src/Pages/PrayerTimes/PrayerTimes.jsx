@@ -3,6 +3,7 @@ import axios from "axios";
 import { Icon } from "@iconify/react";
 import lineMdSearch from "@iconify-icons/line-md/search";
 import "./PrayerTimes.css";
+import Spinner from "../../Components/Spinner/Spinner";
 
 const ALADHAN_API_BASE_URL = "https://api.aladhan.com/v1/timingsByCity";
 const OPENWEATHERMAP_API_BASE_URL = "https://api.openweathermap.org/geo/1.0/direct";
@@ -42,7 +43,7 @@ const LocaleClock = () => {
                 const { data } = response;
                 const hijri = data.data.hijri;
                 setHijriDate(
-                    `${hijri.year}/${hijri.month.number}/${hijri.day}`
+                    ` ${hijri.year} / ${hijri.month.number} / ${hijri.day} `
                 );
             })
             .catch((error) => {
@@ -79,7 +80,7 @@ const PrayerTimesApp = () => {
     };
 
     const searchForLocation = async (city) => {
-        setIsError(false); // Reset error state before starting a new search
+        setIsError(false); 
         try {
             const geoResponse = await axios.get(OPENWEATHERMAP_API_BASE_URL, {
                 params: {
@@ -156,9 +157,7 @@ const PrayerTimesApp = () => {
                 </nav>
             </header>
             {isLoading ? (
-                <div className="loading">
-                    <span className="loader"></span>
-                </div>
+                <Spinner/>
             ) : isError ? (
                 <div className="error">Error fetching data</div>
             ) : (

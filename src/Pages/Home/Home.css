@@ -17,7 +17,7 @@
 .home-container h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color:darkseagreen;
+    color: darkseagreen;
 }
 
 .home-container h2 {
@@ -28,8 +28,88 @@
 .typing-effect-cursor {
     font-size: 48px;
     display: inline-block;
-    width: 4px; 
-    height: 1em; 
+    width: 4px;
+    height: 1em;
     background-color: aquamarine;
-    margin-left: 2px; 
+    margin-left: 2px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    background-color: aquamarine;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 5px;
+    margin: 0 15px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: solid 3px black;
+    z-index: 2;
+    color: #262626;
+    transition: .5s;
+}
+
+.social-icon:hover {
+    color: #FFFFFF;
+    transform: rotateY(360deg);
+}
+
+.social-icon:before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #FF0000;
+    transition: .5s;
+    z-index: -1;
+}
+
+.social-icon:hover:before {
+    top: 0;
+}
+
+.social-icon:nth-child(1):before {
+    background-color: #3b5999;
+}
+
+.social-icon:nth-child(2):before {
+    background-color: #e4405f;
+}
+
+.social-icon:nth-child(3):before {
+    background-color: #24292e;
+}
+
+.social-icon:nth-child(4):before {
+    background-color: #25D366;
+}
+@media (max-width: 768px) {
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        padding-top: 3px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+        padding-top: 2px;
+        margin: 0 8px;
+    }
 }
