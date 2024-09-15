@@ -8,6 +8,8 @@ This project aims to create various web pages using APIs from different provider
 - **Chat API**: Utilizes the Gemini API for chat functionalities. [Gemini](https://ai.google.dev/)
 - **Sports Update API**: Provides sports updates [LiveScore](https://rapidapi.com/apidojo/api/livescore6)
 - **Dictionary API**: Provides English to English dictionary [Dictionary](https://dictionaryapi.dev/)
+- **Text Genarator API**: Provides Text paragraphs for typing [Baconipsum](https://baconipsum.com/json-api/)
+- **Prayer Times API**: Provides Islamic prayer times. [Aladhan](https://aladhan.com/prayer-times-api#tag/Daily-Prayer-Times/paths/~1v1~1timingsByCity~1%7Bdate%7D/get)
 
 ## Live Demo
 
@@ -17,7 +19,7 @@ You can view the live demo of the project [here](https://api-works-one.vercel.ap
 
 ### Prerequisites
 
-- Node.js and npm installed on your machine.
+- Node.js and npm installed on your device.
 
 ### Setting Up Environment Variables
 
